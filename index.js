@@ -15,15 +15,15 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(nesne) {
-	const Cheeseburger = {
-		isim: "Cheeseburger" ,
-		fiyat: "8" , 
-		kategori: "Burgerler" ,
-	}
-	
-}
-return Cheeseburger 
+function MenuElemaniOlustur(isim, fiyat, kategori) {
+	return { 
+		isim: isim , 
+		fiyat: fiyat, 
+		kategori: kategori,
+	};
+} 
+
+
 
 
 /*  Görev 1b (otomatik test yok): 
@@ -36,7 +36,7 @@ return Cheeseburger
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
 
-
+console.log(MenuElemaniOlustur("Cheeseburger", 5, "Pizzalar"))
 
 /* Görev 2: 
 	Özel bir öğle yemeği yiyorsun! Öğretmen ve öğrencilere %25, diğer kişilere %10 indirim var. Aşağıdaki burger nesnesine, indirimi fiyatı otomatik olarak hesaplayan bir metot ekleyin.
@@ -54,9 +54,14 @@ return Cheeseburger
 const burger = {
 	isim: "Burger", 
 	fiyat: 18, 
-	kategori: "Öğle Yemeği", 
+	kategori: "Öğle Yemeği",
+	indirim: function(indirimUygulanacakMusteri) 
+	{
+		return (indirimUygulanacakMusteri === "öğrenci") ? this.fiyat * 0.75 : this.fiyat * 0.9;
+	}
+	}
 
-}
+
 
 
 
@@ -77,6 +82,7 @@ const degerlendirmeler = [
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
 
+console.log(degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")]);
 
 
 /*  Görev 4 (ototest yok):  
@@ -84,7 +90,8 @@ const degerlendirmeler = [
 	1. Bu geribildirimi Reyna'nın değerlendirmesine ekleyin - "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım"
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
-
+degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")].geribildirim = "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+console.log(degerlendirmeler)
 
 
 /*  Görev 5: 
@@ -99,10 +106,17 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
+function DegerledirmeEkle(degerlendirmelerDizisi,musteriIsmi,MusteriPuani,musteriGeriBildirimi){
+	degerlendirmelerDizisi.push({
+	 isim: musteriIsmi,
+	 puan: MusteriPuani,
+	 geribildirim: musteriGeriBildirimi
+	}
+   
+	)
 	
 }
+
 
 
 
