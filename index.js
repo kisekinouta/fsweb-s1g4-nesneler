@@ -15,10 +15,15 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(nesne) {
+	const Cheeseburger = {
+		isim: "Cheeseburger" ,
+		fiyat: "8" , 
+		kategori: "Burgerler" ,
+	}
+	
 }
-
+return Cheeseburger 
 
 
 /*  Görev 1b (otomatik test yok): 
