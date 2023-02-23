@@ -91,6 +91,7 @@ console.log(degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
 degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")].geribildirim = "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+
 console.log(degerlendirmeler)
 
 
@@ -131,12 +132,12 @@ function DegerledirmeEkle(degerlendirmelerDizisi,musteriIsmi,MusteriPuani,muster
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
-	/*Kodlar buraya*/
-
+function AnahtardanDegerlendirmeAl() {
+	//kod
+	
 }
 
-
+	
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
@@ -151,10 +152,14 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 */
 
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
+function SonDegerlendirmeyiAl(parameter) {
+	const degisken = parameter[parameter.length-1]
+	 
+	return degisken.isim + " isimli kişi " + degisken.puan + " puan verdi ve şunları yazdı: " + degisken.geribildirim
+
 	/*Kodlar buraya*/
 } 
-
+console.log(SonDegerlendirmeyiAl(degerlendirmeler))
 
 
 /////////////// BONUS  GÖRVLER////////////////////
